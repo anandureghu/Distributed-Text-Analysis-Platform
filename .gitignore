@@ -1,0 +1,55 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+
+# Output of the Go compiler
+*.o
+*.a
+*.out
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Dependency directories (vendor/)
+vendor/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Go test binary
+*.test
+
+# Air binary
+log_ingestion/log_ingestion_service
+log_processing/log_processing_service
+data_storage/data_storage_service
+analytics/analytics_service
+monitoring/monitoring_service
+
+# Air config file and other temp files
+.air.toml
+.air/
+
+# IDE and editor specific files
+.idea/
+.vscode/
+*.iml
+
+# Docker specific files
+**/Dockerfile~
+**/docker-compose.yml~
+
+# macOS
+.DS_Store
+
+# Linux
+*~

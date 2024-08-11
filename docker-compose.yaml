@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  log_ingestion:
+    build: ./log_ingestion
+    ports:
+      - "8080:8080"
+    networks:
+      - log_net
+
+  log_processing:
+    build: ./log_processing
+    ports:
+      - "50051:50051"
+    networks:
+      - log_net
+
+  data_storage:
+    build: ./data_storage
+    ports:
+      - "50052:50052"
+    networks:
+      - log_net
+
+  analytics:
+    build: ./analytics
+    ports:
+      - "8081:8081"
+      - "50053:50053"
+    networks:
+      - log_net
+
+  monitoring:
+    build: ./monitoring
+    ports:
+      - "8082:8082"
+    networks:
+      - log_net
+
+networks:
+  log_net:
+    driver: bridge
